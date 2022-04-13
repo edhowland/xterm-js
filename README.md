@@ -18,12 +18,23 @@ The above will build the image 'xterm-js'
 
 ```bash
 docker run --rm -it -p 8080:8080 -v ${PWD}/html:/html xterm-js /bin/bash
+cp /html/* .
 http-server
 ```
 
 Then point your browser to : 
 
 hhtp://localhost:8080/index.html
+
+Replace localhost with your IP.
+
+#### Alternate startup:
+
+```bash
+./scripts/docker-run.sh
+```
+
+The above script does the same step as above
 
 ### Stopping the server
 
@@ -35,6 +46,26 @@ exit
 ```
 
 
+## Using a screen reader
+
+This does not yet work very well. YMMV!
+
+Point your browser instead to:
+
+http://localhost:8080/index-sr.html
+
+Substitute your IP address if needed.
+
+
+### Screen Reader notes
+
+This has been tested with  
+
+- MacOS with VoiceOver
+  * Safari browser Command line input, no output
+  * Google Chrome browser : Command line input, no output
+- ChromeBook with ChromeVox
+  * Not working
 
 
 
